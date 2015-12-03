@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org">
+<head>
+  <meta charset="UTF-8">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <img src="img/dog.jpg" alt="dog">
+
+<section ng-view>
+
+<form action="/users" method="post">
+  firstName:
+  <input type="text" name="firstName"><br>
+  lastName:
+  <input type="text" name="lastName"><br>
+  email:
+  <input type="text" name="email"><br>
+  username:
+  <input type="text" name="username"><br>
+  password:  
+  <input type="password" name="password"><br>
+  <button type="submit">submit</button>
+</form>
+
+</section>
+
+  <script type="text/javascript" src="/lib/angular/angular.js"></script>
+  <script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="/example/example.client.module.js"></script>
+  <script type="text/javascript" src="/example/config/example.client.routes.js"></script>
+  <script type="text/javascript" src="/application.js"></script>
+</body>
+</html>

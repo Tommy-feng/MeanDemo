@@ -1,0 +1,24 @@
+{
+  "name": "blog",
+  "description": "personal blog",
+  "main": "server.js",
+  "authors": [
+    "fengzheqi"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
