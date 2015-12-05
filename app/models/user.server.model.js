@@ -8,7 +8,7 @@ var UserSchema = new Schema({
   email: {
     type: String,
     match: [/.+\@.+\..+/, 'Please fill a valid e-mail address']
-  }
+  },
   username: {
     type: String,
     unique: true,
@@ -40,7 +40,7 @@ var UserSchema = new Schema({
 });
 
 UserSchema.virtual('fullName').get(function() {
-  return this.firstName + ' ' + this.lasetName;
+  return this.firstName + ' ' + this.lastName;
 }).set(function(fullName) {
   var splitName = fullName.split(' ');
   this.firstName = splitName[0] || '';
@@ -64,7 +64,7 @@ UserSchema.methods.authenticate = function(password) {
   return this.password = this.hashPassword(password);
 };
 
-UserSchme.statics.findUniqueUsername = function(username, suffix, callback) {
+UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
   var _this = this;
   var possibleUsername = username + (suffix || '');
 

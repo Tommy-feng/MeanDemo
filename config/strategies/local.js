@@ -23,7 +23,7 @@ module.exports = function() {
         });
       }
 
-      return done(null, user),
+      return done(null, user);
     })
   }));
 }
