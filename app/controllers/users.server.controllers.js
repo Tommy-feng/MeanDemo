@@ -51,7 +51,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
         return done(er, user);
       }
     }
-  });
+  }); 
 }
 
 exports.renderSignin = function(req, res, next) {
@@ -172,3 +172,12 @@ exports.delete = function(req, res, next) {
   }
   })
 };
+
+exports.requiresLogin = function(req, res, next) {
+  if (req.isAuthenticated()) {
+    return res.status(401).send({
+      message: 'User is not logged in'
+    });
+  }
+  next();
+}
