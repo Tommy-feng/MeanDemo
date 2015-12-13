@@ -51,7 +51,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
         return done(er, user);
       }
     }
-  }); 
+  });
 }
 
 exports.renderSignin = function(req, res, next) {
