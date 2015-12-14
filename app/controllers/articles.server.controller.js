@@ -16,7 +16,7 @@ var getErrorMessage = function(err) {
 exports.create = function(req, res) {
     var article = new Article(req.body);
     article.creator = req.user;
-s
+
     article.save(function(err) {
         if (err) {
             return res.status(400).send({
@@ -30,7 +30,7 @@ s
 
 exports.list = function(req, res) {
     Article.find()
-        .sort(-createDate)
+        .sort('-createDate')
         .populate('creator', 'firstName lastName fullName')
         .exec(function(err, article) {
             if (err) {
